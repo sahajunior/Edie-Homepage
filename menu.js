@@ -1,15 +1,13 @@
-const menuBtn = document.querySelector("#menu-btn");
-const menu = document.querySelector("#menu");
-const close = "close-menu"
-
-menuBtn.addEventListener("click", function(){
-    if (menu.classList.contains(close)) {
-        menu.classList.remove(close);
-    } else {
-        menu.classList.toggle(close);
-    }
+const menuBtn = document.getElementById("menu-button");
+const menuEL = document.getElementById("menu");
+menuBtn.addEventListener("click", () => {
+  menuEL.classList.toggle("show");
+  if (menuEL.classList.contains("show")) {
+    menuEL.classList.remove("hide");
+  } else {
+    menuEL.classList.add("hide");
+  }
+  menuBtn.classList.toggle("fixed");
+  menuBtn.classList.toggle("fa-bars");
+  menuBtn.classList.toggle("fa-times");
 });
-
-function closeMenu() {
-    menu.classList.toggle(close);
-}
